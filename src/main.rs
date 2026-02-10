@@ -21,7 +21,7 @@ mod minecraft {
     pub mod game_launch;
 }
 
-const APP_ID: &str = "com.github.suverent-shiro.CopperLauncher";
+const APP_ID: &str = "com.github.suverent-shiro.Copper-Launcher";
 
 fn main() -> glib::ExitCode {
     println!("Lauching Copper Launcher");

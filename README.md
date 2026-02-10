@@ -57,9 +57,9 @@ Currently Copper Launcher is only aimed at Linux based systems. Windows and over
 To install Copper Launcher you can clone this repository and compile it using cargo.
 
 ```
-git clone https://github.com/Suverent-Shiro/CopperLauncher.git
+git clone https://github.com/Suverent-Shiro/Copper-Launcher.git
 
-cd CopperLauncher/
+cd Copper-Launcher/
 
 cargo run --release
 ```

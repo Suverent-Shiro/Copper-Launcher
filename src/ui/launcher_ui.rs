@@ -386,7 +386,7 @@ pub fn on_startup(app: &gtk::Application) {
     let github_repo = gio::ActionEntry::builder("github_repo")
         .activate(|app: &gtk::Application, _, _| {
            if let Some(window) = app.active_window() {
-                let launcher = gtk::UriLauncher::new("https://github.com/Suverent-Shiro/CopperLauncher");
+                let launcher = gtk::UriLauncher::new("https://github.com/Suverent-Shiro/Copper-Launcher");
                 launcher.launch(
                     Some(&window),
                     None::<&gio::Cancellable>,
