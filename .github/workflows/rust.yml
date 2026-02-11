@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install GLib dependencies -y libglib2.0-dev pkg-config
-    - run: sudo apt-get update && sudo apt-get install 
+      run: sudo apt-get update && sudo apt-get install 
     - name: Build
       run: cargo build --verbose
     - name: Run tests
