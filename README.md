@@ -38,7 +38,7 @@
   - [x] Instances
     - [x] Version selection
     - [x] Creating instance
-    - [ ] Downloading the game
+    - [x] Downloading the game
   - [ ] Ability to launch the game
 - [ ] Launcher preferences
 - [ ] Auto downloading java

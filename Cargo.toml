@@ -7,8 +7,6 @@ authors = ["Suverent-Shiro"]
 description = "Copper Launcher is a GTK based launcher for Minecraft written in Rust."
 
 license = "GPL-3.0"
-license-file = "LICENSE"
-
 
 [dependencies]
 gtk = { version = "0.10.3", package = "gtk4", features = ["v4_20"] }

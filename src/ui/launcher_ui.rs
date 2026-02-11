@@ -128,7 +128,7 @@ pub fn on_startup(app: &gtk::Application) {
                     .modal(true)
                     .program_name("About Copper Launcher")
                     .version("0.1.0")
-                    .website("https:// github.com/Suverent-Shiro")
+                    .website("https://github.com/Suverent-Shiro")
                     .license_type(gtk::License::Gpl30)
                     .authors(["Suverent-Shiro"])
                     .logo(&logo)
@@ -241,8 +241,6 @@ pub fn on_startup(app: &gtk::Application) {
             instance_input_field,
              move |_| {
                 let instance_name = instance_input_field.text();
-                
-                instance::instance_create(&instance_name);
                 println!("Instance name: {}", instance_name);
             }
         ));
@@ -335,6 +333,8 @@ pub fn on_startup(app: &gtk::Application) {
                 #[weak]
                 instance_input_field,
                 #[weak]
+                ver_dropdown,
+                #[weak]
                 new_instance_window,
                 move |_| {
                     let instance_name = instance_input_field.text();
@@ -344,7 +344,15 @@ pub fn on_startup(app: &gtk::Application) {
                             return;
                         }
 
-                        instance::instance_create(&instance_name);
+                        let selected_index = ver_dropdown.selected() as usize;
+                        let version_list = ver_dropdown.model().unwrap();
+                        let version_object = version_list.item(selected_index as u32).unwrap();
+                        let version_string = version_object
+                            .downcast_ref::<gtk::StringObject>()
+                            .unwrap()
+                            .string();
+
+                        instance::instance_create(&instance_name, &version_string);
 
                         new_instance_window.close();
                     }

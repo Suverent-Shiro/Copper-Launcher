@@ -4,3 +4,8 @@
 // Copyright (c) 2026 Suverent_Shiro
 //
 // See LICENSE file for more details.
+
+
+fn check_java() {
+    
+}

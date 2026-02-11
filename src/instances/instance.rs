@@ -9,8 +9,9 @@
 use gtk::{glib};
 use std::{fs, path::PathBuf};
 
+use crate::minecraft::api;
 
-pub fn instance_create(instance_name: &str) {
+pub fn instance_create(instance_name: &str, minecraft_version: &str) {
     let home_dir = glib::home_dir();
     
     // Build the instance path
@@ -51,6 +52,33 @@ pub fn instance_create(instance_name: &str) {
         .recursive(true)
         .create(&mc_txt_instance_dir_path)
         .expect("Failed to create resourcepacks directory");
+
+    // Instance directory - Minecraft - mods
+    let mut mc_mod_instance_dir_path = mc_instance_dir_path.clone();
+            mc_mod_instance_dir_path.push("mods");
+    
+    fs::DirBuilder::new()
+        .recursive(true)
+        .create(&mc_mod_instance_dir_path)
+        .expect("Failed to create mods directory");
+
+    // Instance directory - Minecraft - shaderpacks
+    let mut mc_shader_instance_dir_path = mc_instance_dir_path.clone();
+            mc_shader_instance_dir_path.push("shaderpacks");
+    
+    fs::DirBuilder::new()
+        .recursive(true)
+        .create(&mc_shader_instance_dir_path)
+        .expect("Failed to create shaderpacks directory");
+
+
+    // Minecraft downloader
+    println!("Downloading Minecraft {}...", minecraft_version);  
+    match api::setup_minecraft_version(minecraft_version, &instance_dir_path, true) {
+        Ok(_) => println!("Instance created succesfully!"),
+        Err(e) => println!("Failed to download minecraft: {}", e)
+    }   
+
 }
 
 // Work in progress
