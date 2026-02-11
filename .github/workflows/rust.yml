@@ -16,8 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Install GLib dependencies -y libglib2.0-dev pkg-config
-      run: sudo apt-get update && sudo apt-get install 
+    - name: Install GLib dependencies
+      run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev pkg-config
     - name: Set PKG_CONFIG_PATH
       run: echo "PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig" >> $GITHUB_ENV
     - name: Build
