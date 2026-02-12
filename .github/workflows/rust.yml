@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev pkg-config libgdk-pixbuf2.0-dev libcairo2-dev libpango1.0-dev libgraphene-1.0-dev gtk4
+      run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev pkg-config libgdk-pixbuf2.0-dev libcairo2-dev libpango1.0-dev libgraphene-1.0-dev libgtk-4-dev
     - name: Set PKG_CONFIG_PATH
       run: echo "PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig" >> $GITHUB_ENV
     - name: Build
