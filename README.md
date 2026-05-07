@@ -1,11 +1,11 @@
 <!----------------------------------------------------------------------------->
 
-# Copper Launcher
+# Copper Launcher - Legacy branch
 
 > [!IMPORTANT]
-> Copper Launcher is currently in very early development.
->
-> Everything in the project is a subject to change.
+> You are currently viewing the `legacy` branch of Copper Launcher.
+> 
+> Here is the old codebase for Copper Launcher before the rewrite, this code was never actually finished, so don't expect anything fully working here.
 
 **Copper Launcher** is a GTK based launcher for Minecraft Java Edition that allows you to have multiple instances.
 
